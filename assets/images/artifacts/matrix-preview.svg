@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#1e3e62"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Document Canvas -->
+  <rect width="800" height="500" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <path d="M 0 8 Q 0 0 8 0 L 792 0 Q 800 0 800 8 L 800 70 L 0 70 Z" fill="url(#headerGrad)"/>
+  <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#c5a059" letter-spacing="1">GOVERNANCE &amp; INTERNAL CONTROLS</text>
+  <text x="30" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Approval Authority &amp; Financial Delegation Matrix</text>
+  <rect x="650" y="24" width="120" height="26" rx="13" fill="#112240" stroke="#c5a059" stroke-width="1"/>
+  <text x="710" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">ACTIVE POLICY</text>
+
+  <!-- Table Grid -->
+  <!-- Table Header -->
+  <rect x="30" y="90" width="740" height="38" fill="#0f172a" rx="4"/>
+  <text x="50" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#c5a059">ROLE / DESIGNATION</text>
+  <text x="220" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#c5a059">MAKING CHARGE DISC.</text>
+  <text x="390" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#c5a059">OLD GOLD THRESHOLD</text>
+  <text x="570" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#c5a059">CREDIT SALE LIMIT</text>
+
+  <!-- Row 1: Sales Representative -->
+  <rect x="30" y="136" width="740" height="60" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="162" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0f172a">Showroom Salesman</text>
+  <text x="50" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b">Store Counter Staff</text>
+  <text x="220" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to 3.0% Max</text>
+  <text x="390" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to ₹50,000</text>
+  <text x="570" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#ef4444">Zero (Strictly Prohibited)</text>
+
+  <!-- Row 2: Store Manager -->
+  <rect x="30" y="204" width="740" height="60" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0f172a">Branch Store Manager</text>
+  <text x="50" y="248" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b">Branch Operational Head</text>
+  <text x="220" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to 7.5% Max</text>
+  <text x="390" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to ₹200,000</text>
+  <text x="570" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to ₹250,000 (15-Day)</text>
+
+  <!-- Row 3: Regional Head / Operations GM -->
+  <rect x="30" y="272" width="740" height="60" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="298" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0f172a">Regional Operations Lead</text>
+  <text x="50" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b">Cluster Manager (3 Branches)</text>
+  <text x="220" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to 12.0% Max</text>
+  <text x="390" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to ₹500,000</text>
+  <text x="570" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1e293b">Up to ₹1,000,000 (30-Day)</text>
+
+  <!-- Row 4: CFO / Managing Director -->
+  <rect x="30" y="340" width="740" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="50" y="366" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#92400e">Executive Board (CFO / MD)</text>
+  <text x="50" y="384" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#b45309">Corporate Headquarters</text>
+  <text x="220" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#92400e">&gt; 12.0% or Net Margin Override</text>
+  <text x="390" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#92400e">Unlimited (Formal PO)</text>
+  <text x="570" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#92400e">&gt; ₹1,000,000 + Corporate Guarantee</text>
+
+  <!-- Implementation note -->
+  <rect x="30" y="415" width="740" height="60" rx="4" fill="#f1f5f9"/>
+  <text x="50" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#0f172a">ERP Implementation Safeguard:</text>
+  <text x="50" y="458" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#475569">Configured automated Odoo backend validation rules. Any input exceeding role thresholds triggers dynamic approval routing, preventing checkout without supervisor 2FA clearance.</text>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#1e3e62"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+
+  <!-- Document Canvas -->
+  <rect width="800" height="500" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <path d="M 0 8 Q 0 0 8 0 L 792 0 Q 800 0 800 8 L 800 70 L 0 70 Z" fill="url(#headerGrad)"/>
+  <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#c5a059" letter-spacing="1">ERPNEXT / FRAPPE SYSTEM ARCHITECTURE</text>
+  <text x="30" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Fleet Logistics, Trip Dispatch &amp; Preventive Maintenance Lifecycle</text>
+  <rect x="650" y="24" width="120" height="26" rx="13" fill="#112240" stroke="#0284c7" stroke-width="1"/>
+  <text x="710" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">ERPNEXT v14/15</text>
+
+  <!-- Lifecycle Stage Flow -->
+  <!-- Box 1: Booking & Dispatch -->
+  <g transform="translate(30, 95)">
+    <rect width="210" height="110" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="2"/>
+    <text x="15" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0369a1">01. TRIP DISPATCH</text>
+    <text x="15" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Driver &amp; Vehicle Allocation</text>
+    <text x="15" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Fitness/Insurance Check</text>
+    <text x="15" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Initial Odometer Log</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="245" y1="150" x2="285" y2="150" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Transit & Fuel Auditing -->
+  <g transform="translate(295, 95)">
+    <rect width="210" height="110" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="2"/>
+    <text x="15" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0369a1">02. TRANSIT &amp; FUEL LOG</text>
+    <text x="15" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• GPS Toll &amp; Route Tracking</text>
+    <text x="15" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Fuel Voucher Validation</text>
+    <text x="15" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Auto Expense Ledger Entry</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="510" y1="150" x2="550" y2="150" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: Post-Trip Inspection -->
+  <g transform="translate(560, 95)">
+    <rect width="210" height="110" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="2"/>
+    <text x="15" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#0369a1">03. TRIP COMPLETION</text>
+    <text x="15" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Return Odometer Audit</text>
+    <text x="15" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Physical Checklist Inspection</text>
+    <text x="15" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#334155">• Driver Daily Allowance Settlement</text>
+  </g>
+
+  <!-- Arrow from 3 Down to Maintenance Trigger -->
+  <path d="M 665 210 L 665 240 L 400 240 L 400 270" stroke="#c5a059" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Automated Maintenance & Ledger Engine (Bottom Wide Box) -->
+  <g transform="translate(30, 275)">
+    <rect width="740" height="135" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#854d0e">
+      AUTOMATED INTEGRATION TRIGGERS &amp; PREVENTIVE SERVICE ALERTS
+    </text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="220" height="65" rx="4" fill="#ffffff" stroke="#fef08a"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#713f12">Mileage Maintenance Threshold</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" fill="#475569">When Cumulative KM exceeds 5,000 km, status auto-locks to 'Service Required'.</text>
+    </g>
+
+    <g transform="translate(255, 50)">
+      <rect width="220" height="65" rx="4" fill="#ffffff" stroke="#fef08a"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#713f12">Statutory Expiry Email Alert</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" fill="#475569">Auto-triggers alert to Fleet Manager 15 days before Insurance / Fitness expiry.</text>
+    </g>
+
+    <g transform="translate(490, 50)">
+      <rect width="230" height="65" rx="4" fill="#ffffff" stroke="#fef08a"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#713f12">Real-Time Cost-Per-KM</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" fill="#475569">Correlates (Fuel + Maintenance + Driver Cost) / KM to flag inefficient vehicles.</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(30, 430)">
+    <rect width="740" height="42" rx="4" fill="#0f172a"/>
+    <text x="25" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#ffffff">Role Contribution:</text>
+    <text x="150" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#cbd5e1">Engineered by Adithiya B Vinu at Turqosoft Solutions (DocType Configuration, Custom Logic &amp; GL Sync)</text>
+  </g>
+</svg>

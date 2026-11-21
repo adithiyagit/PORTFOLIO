@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="60%" stop-color="#0f213d"/>
+      <stop offset="100%" stop-color="#172a45"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3d07a"/>
+      <stop offset="50%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#9a7b38"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle Decorative Grid Lines -->
+  <path d="M 0 120 L 1200 120 M 0 240 L 1200 240 M 0 360 L 1200 360 M 0 480 L 1200 480" stroke="#233554" stroke-width="1" opacity="0.4"/>
+  <path d="M 200 0 L 200 630 M 400 0 L 400 630 M 600 0 L 600 630 M 800 0 L 800 630 M 1000 0 L 1000 630" stroke="#233554" stroke-width="1" opacity="0.4"/>
+
+  <!-- Top Status Pill -->
+  <rect x="80" y="70" width="460" height="38" rx="19" fill="#112240" stroke="#c5a059" stroke-width="1.5"/>
+  <circle cx="102" cy="89" r="6" fill="#10b981"/>
+  <text x="120" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#e2e8f0" letter-spacing="0.5">OPEN TO OPPORTUNITIES • INDIA &amp; UAE/GCC</text>
+
+  <!-- Main Headline -->
+  <text x="80" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">Adithiya B Vinu</text>
+  
+  <!-- Sub-headline / Positioning -->
+  <text x="80" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="url(#gold)" letter-spacing="1">ERP FUNCTIONAL CONSULTANT | QA &amp; UAT</text>
+
+  <!-- Summary Paragraph -->
+  <text x="80" y="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#94a3b8" width="800">
+    The functional bridge between business operations &amp; software engineering.
+  </text>
+  <text x="80" y="332" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#94a3b8">
+    Proven in 9-store retail rollouts, Odoo &amp; ERPNext, BRD/FRD authoring &amp; UAT execution.
+  </text>
+
+  <!-- Metric Badges Row -->
+  <g transform="translate(80, 400)">
+    <!-- Metric 1 -->
+    <rect x="0" y="0" width="220" height="130" rx="12" fill="#112240" stroke="#233554" stroke-width="1.5"/>
+    <text x="24" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="url(#gold)">9 Stores</text>
+    <text x="24" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#e2e8f0">Retail Rollout</text>
+    <text x="24" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">Trained &amp; Onboarded</text>
+
+    <!-- Metric 2 -->
+    <rect x="250" y="0" width="220" height="130" rx="12" fill="#112240" stroke="#233554" stroke-width="1.5"/>
+    <text x="274" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="url(#gold)">6 Modules</text>
+    <text x="274" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#e2e8f0">ERP Lifecycle</text>
+    <text x="274" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">CRM, Sales, Inv, HR</text>
+
+    <!-- Metric 3 -->
+    <rect x="500" y="0" width="220" height="130" rx="12" fill="#112240" stroke="#233554" stroke-width="1.5"/>
+    <text x="524" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="url(#gold)">100%</text>
+    <text x="524" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#e2e8f0">UAT Sign-off</text>
+    <text x="524" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">Zero Go-Live Blockers</text>
+
+    <!-- Metric 4 -->
+    <rect x="750" y="0" width="240" height="130" rx="12" fill="#112240" stroke="#c5a059" stroke-width="1.5"/>
+    <text x="774" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#ffffff">Odoo &amp; ERPNext</text>
+    <text x="774" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="url(#gold)">Core Platforms</text>
+    <text x="774" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94a3b8">Empire AE IT Services</text>
+  </g>
+
+  <!-- Right Logo Crest -->
+  <g transform="translate(1030, 160)">
+    <circle cx="0" cy="0" r="70" fill="#112240" stroke="url(#gold)" stroke-width="3"/>
+    <text x="0" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="url(#gold)" text-anchor="middle">ABV</text>
+  </g>
+</svg>
