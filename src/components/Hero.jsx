@@ -42,14 +42,6 @@ export default function Hero({ profile, stats }) {
 
       <div className="container relative z-10 pt-8 sm:pt-12">
         
-        {/* Availability Pill */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/10 border border-red-500/25 text-red-400 text-xs font-semibold backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>{profile.availability} • {profile.mobility}</span>
-          </div>
-        </div>
-
         {/* 3-Column Hero Grid: Left Content | Center Transparent Cutout | Right Stats */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           
