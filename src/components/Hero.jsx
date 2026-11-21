@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, ArrowDown, ArrowUpRight, Sparkles } from 'lucide-react';
+import { FileText, ArrowUpRight } from 'lucide-react';
 
 export default function Hero({ profile, stats }) {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -29,18 +29,18 @@ export default function Hero({ profile, stats }) {
   }, [displayText, isDeleting, currentRoleIndex, profile.roles]);
 
   return (
-    <section id="hero" className="pt-8 pb-16 overflow-hidden relative">
+    <section id="hero" className="pt-6 pb-12 sm:pb-16 overflow-hidden relative">
       
       {/* =====================================================================
-          GIANT "PORTFOLIO" CONDENSED HEADLINE (Pinterest Signature Feature)
+          GIANT "PORTFOLIO" CONDENSED HEADLINE (Behind Center Cutout)
           ===================================================================== */}
-      <div className="absolute top-2 inset-x-0 flex justify-center z-0 pointer-events-none opacity-90 select-none overflow-hidden">
+      <div className="absolute top-0 inset-x-0 flex justify-center z-0 pointer-events-none select-none overflow-hidden">
         <h1 className="giant-portfolio-text">
           PORTFOLIO
         </h1>
       </div>
 
-      <div className="container relative z-10 pt-12 md:pt-16">
+      <div className="container relative z-10 pt-8 sm:pt-12">
         
         {/* Availability Pill */}
         <div className="flex justify-center mb-6">
@@ -50,11 +50,11 @@ export default function Hero({ profile, stats }) {
           </div>
         </div>
 
-        {/* 3-Column Hero Grid: Left Content | Center Portrait | Right Stats Stack */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* 3-Column Hero Grid: Left Content | Center Transparent Cutout | Right Stats */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           
-          {/* Left Column: Bio & Introduction (5 cols) */}
-          <div className="lg:col-span-5 text-left order-2 lg:order-1">
+          {/* Left Column: Bio & Name (4 cols on lg) */}
+          <div className="lg:col-span-4 text-left order-2 lg:order-1 pb-2 lg:pb-6 z-20">
             <div className="font-script text-3xl sm:text-4xl text-red-400 font-bold mb-1">
               Hello, I'm
             </div>
@@ -66,7 +66,7 @@ export default function Hero({ profile, stats }) {
             </h2>
 
             {/* Dynamic Typewriter Role */}
-            <div className="inline-block px-3 py-1 bg-red-950/40 border-l-2 border-red-500 text-slate-200 text-xs sm:text-sm font-semibold tracking-wide mb-4">
+            <div className="inline-block px-3 py-1 bg-red-950/50 border-l-2 border-red-500 text-slate-200 text-xs sm:text-sm font-semibold tracking-wide mb-4">
               <span>{displayText}</span>
               <span className="inline-block w-1.5 h-4 bg-red-500 ml-1 animate-pulse align-middle"></span>
             </div>
@@ -96,45 +96,30 @@ export default function Hero({ profile, stats }) {
             </div>
           </div>
 
-          {/* Center Column: Portrait Layered over PORTFOLIO (4 cols) */}
-          <div className="lg:col-span-4 flex justify-center order-1 lg:order-2">
-            <div className="relative group max-w-[320px] sm:max-w-[360px] w-full">
+          {/* Center Column: TRANSPARENT CUTOUT PERSON (5 cols on lg) */}
+          <div className="lg:col-span-5 flex justify-center items-end order-1 lg:order-2 relative z-10 -mb-6 sm:-mb-8">
+            <div className="relative w-full max-w-[380px] sm:max-w-[450px] lg:max-w-[480px] flex justify-center items-end">
               
-              {/* Subtle Red Halo Behind Portrait */}
-              <div className="absolute -inset-2 bg-gradient-to-t from-red-600/30 via-rose-500/10 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition duration-500"></div>
+              {/* Crimson Atmospheric Spotlight Glow Behind Cutout */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-80 h-80 bg-red-600/25 rounded-full blur-3xl pointer-events-none"></div>
 
-              {/* Portrait Container with Bottom Gradient Fade */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0c050a]">
-                <img
-                  src={profile.photo}
-                  alt="Adithiya B Vinu - ERP Functional Consultant"
-                  className="w-full h-[400px] sm:h-[460px] object-cover object-top filter contrast-[1.03] brightness-[1.02] group-hover:scale-102 transition-transform duration-500"
-                />
-
-                {/* Bottom Shadow Gradient Overlay */}
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#090407] via-[#090407]/60 to-transparent pointer-events-none"></div>
-
-                {/* Portrait Overlay Tag */}
-                <div className="absolute bottom-4 inset-x-4 flex items-center justify-between z-10 px-3 py-2 rounded-lg bg-black/70 backdrop-blur-md border border-white/10">
-                  <div className="text-left">
-                    <div className="text-xs font-bold text-white tracking-wide">
-                      {profile.name}
-                    </div>
-                    <div className="text-[10px] text-red-400 font-semibold uppercase tracking-wider">
-                      Odoo Functional Consultant
-                    </div>
-                  </div>
-                  <div className="w-2 h-2 rounded-full bg-red-500 animate-ping"></div>
-                </div>
-
-              </div>
+              {/* The Seamless Transparent Cutout Image */}
+              <img
+                src={profile.photo}
+                alt={`${profile.name} - ERP Functional Consultant`}
+                className="relative z-10 w-full h-auto max-h-[520px] sm:max-h-[620px] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)] transition-transform duration-500 hover:scale-[1.02]"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)'
+                }}
+              />
 
             </div>
           </div>
 
-          {/* Right Column: Vertical Stat Counters (3 cols) */}
-          <div className="lg:col-span-3 flex flex-col gap-4 order-3">
-            {stats.map((st, i) => (
+          {/* Right Column: Vertical Stat Counters (3 cols on lg) */}
+          <div className="lg:col-span-3 flex flex-col gap-3.5 order-3 pb-2 lg:pb-6 z-20">
+            {stats.map((st) => (
               <div
                 key={st.label}
                 className="editorial-card p-4 rounded-xl text-left border-l-2 hover:border-l-red-500 transition-all group"

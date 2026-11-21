@@ -13,7 +13,7 @@ export const portfolioData = {
     subtitle: "Odoo Implementation & Business Process Delivery",
     hook: "Judges a business process by its edge cases.",
     quote: "Bridging business stakeholders and technical developers through rigorous gap analysis, validated configurations, and structured UAT sign-offs.",
-    photo: "assets/images/adithiya-photo.jpg",
+    photo: "assets/images/adithiya-photo-cutout.png",
     email: "adithiyavinu.b@gmail.com",
     phone: "+91 96337 83038",
     location: "Kochi, Kerala, India",
