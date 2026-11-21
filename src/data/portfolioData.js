@@ -1,6 +1,8 @@
 export const portfolioData = {
   profile: {
     name: "Adithiya B Vinu",
+    firstName: "ADITHIYA",
+    lastName: "B VINU",
     roles: [
       "ERP Functional Consultant",
       "Project Coordinator & QA Lead",
@@ -10,6 +12,7 @@ export const portfolioData = {
     headline: "ERP Functional Consultant | Project Coordinator | QA & UAT",
     subtitle: "Odoo Implementation & Business Process Delivery",
     hook: "Judges a business process by its edge cases.",
+    quote: "Bridging business stakeholders and technical developers through rigorous gap analysis, validated configurations, and structured UAT sign-offs.",
     photo: "assets/images/adithiya-photo.jpg",
     email: "adithiyavinu.b@gmail.com",
     phone: "+91 96337 83038",
@@ -17,29 +20,102 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/adithiya-b-vinu",
     github: "https://github.com/adithiyagit",
     resumePdf: "assets/docs/Adithiya_B_Vinu_Resume.pdf",
-    availability: "Immediate",
+    availability: "Immediate Availability",
     mobility: "Open to Relocation (India & UAE / GCC)",
     nationality: "Indian"
   },
 
   summary: "ERP professional with hands-on experience across the full implementation lifecycle — functional testing, UAT, BRD/FRD documentation, and change control — on a live, multi-module Odoo rollout. Skilled at analyzing business processes against system capabilities, identifying gaps, and translating requirements into validated configurations, while bridging business users, developers, and vendors. Seeking a structured ERP Functional Consultant, Business Analyst, or Project Coordinator role.",
 
-  metrics: [
-    { value: "9 Stores", label: "Retail Rollout", desc: "Live multi-module Odoo rollout across 9 store locations" },
-    { value: "Full SDLC", label: "Delivery Scope", desc: "Requirements → Design → Build → UAT → Deploy" },
-    { value: "100%", label: "UAT Sign-off", desc: "Zero critical blockers on scheduled store cutovers" },
-    { value: "Immediate", label: "Availability", desc: "Ready for Pan-India & UAE/GCC Relocation" }
+  stats: [
+    { number: "09+", label: "Stores Rollout", sub: "Live Multi-Module Odoo Implementation" },
+    { number: "100%", label: "UAT Sign-off", sub: "Zero Critical Blockers at Store Cutover" },
+    { number: "18+", label: "SOP Manuals", sub: "Authored Across 6 Core Business Functions" },
+    { number: "Full", label: "SDLC Lifecycle", sub: "Requirements → Build → Test → Deploy" }
   ],
 
-  orbitalTech: [
-    { name: "Odoo ERP", category: "Core Platform", orbit: "inner", angle: 0 },
-    { name: "ERPNext", category: "Frappe Framework", orbit: "inner", angle: 120 },
-    { name: "UAT & QA", category: "Sign-off Testing", orbit: "inner", angle: 240 },
-    { name: "BRD / FRD", category: "Business Analysis", orbit: "outer", angle: 45 },
-    { name: "Jira & Trello", category: "Change Control", orbit: "outer", angle: 110 },
-    { name: "MS Excel", category: "Data Reconciliation", orbit: "outer", angle: 180 },
-    { name: "Process Mapping", category: "BPMN & Workflows", orbit: "outer", angle: 250 },
-    { name: "Python Basics", category: "Technical Bridge", orbit: "outer", angle: 315 }
+  workProcess: [
+    {
+      step: "01",
+      title: "Requirement Gathering",
+      desc: "Conduct stakeholder interviews, map as-is operational workflows, and evaluate functional feasibility against standard ERP system capabilities.",
+      tag: "Gap Analysis"
+    },
+    {
+      step: "02",
+      title: "BRD & FRD Authoring",
+      desc: "Translate business requirements into structured functional specifications, process flowcharts, and tiered approval authority matrices.",
+      tag: "Documentation"
+    },
+    {
+      step: "03",
+      title: "Configuration & Build",
+      desc: "Validate multi-module parameterization (CRM, Sales, Purchase, Inventory, Accounts, HR) and coordinate change requests in Jira within agreed SLAs.",
+      tag: "Workflow Validation"
+    },
+    {
+      step: "04",
+      title: "QA & UAT Execution",
+      desc: "Design detailed test cases, lead user acceptance testing sessions, log defects, verify developer bug-fixes, and secure formal cutover sign-off.",
+      tag: "Sign-Off Testing"
+    },
+    {
+      step: "05",
+      title: "User Training & Hypercare",
+      desc: "Deliver rotational batch training across 9 store locations, roll out standardized SOP libraries, and provide post-go-live stabilization support.",
+      tag: "Enablement"
+    }
+  ],
+
+  projects: [
+    {
+      id: "01",
+      title: "Jewellery Retail ERP Implementation",
+      platform: "Odoo ERP",
+      year: "2026",
+      scope: "Live Multi-Module Rollout Across 9 Retail Store Locations",
+      desc: "Coordinated a live multi-module Odoo rollout across nine retail locations — managing requirements gathering, change control, BRD/FRD-aligned SOPs, UAT planning & execution, and rotational batch end-user training.",
+      highlights: [
+        "Simultaneous live deployment across 9 retail branch stores",
+        "Modules: CRM, POS, Purchase, Inventory, Accounts, and HR",
+        "Authored 18+ store operational SOP manuals & approval matrices",
+        "100% UAT sign-off secured with zero critical go-live blockers"
+      ],
+      tags: ["Odoo ERP", "9 Store Locations", "UAT Sign-off", "SOP Library", "Change Control"],
+      featured: true
+    },
+    {
+      id: "02",
+      title: "Fleet Management ERP System",
+      platform: "ERPNext / Frappe",
+      year: "2025 – 2026",
+      scope: "End-to-End Requirements to Deployment Workflow",
+      desc: "Self-directed enterprise project covering vehicle tracking, maintenance scheduling, and fuel auditing, built to practice requirements-to-deployment workflow end to end on the Frappe framework.",
+      highlights: [
+        "State-machine vehicle trip dispatch and status tracking",
+        "Automated preventive maintenance triggers at 5,000 km milestones",
+        "Driver allowance calculations and fuel expense auditing",
+        "General Ledger financial reconciliation and audit logs"
+      ],
+      tags: ["ERPNext", "Frappe Framework", "Fleet Logistics", "Maintenance Triggers", "Full SDLC"],
+      featured: true
+    },
+    {
+      id: "03",
+      title: "Quality Governance & SOP Framework",
+      platform: "Standard Operating Procedures",
+      year: "2026",
+      scope: "Cross-Functional Operational Documentation & Testing Matrix",
+      desc: "Standardized operational governance for enterprise retail clients, establishing verified procedural manuals, tiered approval limits, and comprehensive regression test suites.",
+      highlights: [
+        "Old Gold & Job Work workflow standardization for retail jewellery",
+        "Bank reconciliation protocols and cash register closing audits",
+        "Defect triage dashboards and regression test matrices",
+        "Reduced post-go-live helpdesk tickets by over 40%"
+      ],
+      tags: ["SOP Authoring", "Approval Authority", "Defect Triage", "Regression Testing", "Hypercare"],
+      featured: true
+    }
   ],
 
   competencies: [
@@ -47,43 +123,37 @@ export const portfolioData = {
       id: "project-delivery",
       title: "Project Delivery & Change Control",
       desc: "SDLC governance (Requirements → Design → Build → Test → Deploy), change request (CR) scoping & tracking, risk/issue logging, status reporting, and SLA adherence.",
-      tags: ["SDLC", "Change Control", "Jira", "Trello", "SLA Adherence"],
-      icon: "ShieldAlert"
+      tags: ["SDLC", "Change Control", "Jira", "Trello", "SLA Adherence"]
     },
     {
       id: "stakeholder-vendor",
       title: "Stakeholder & Vendor Coordination",
       desc: "Functional liaison between business users, developers, and third-party vendors. Meeting facilitation, minutes of meeting (MoM), and actionable task tracking.",
-      tags: ["Vendor Liaison", "Meeting Facilitation", "Action Tracking", "Stakeholder Alignment"],
-      icon: "Users"
+      tags: ["Vendor Liaison", "Meeting Facilitation", "Action Tracking", "Stakeholder Alignment"]
     },
     {
       id: "business-analysis",
-      title: "Business Analysis",
+      title: "Business Analysis & BRD/FRD",
       desc: "BRD & FRD authoring, requirement gathering, gap analysis against standard system capabilities, process mapping, and workflow documentation.",
-      tags: ["BRD Authoring", "FRD Authoring", "Gap Analysis", "Process Mapping"],
-      icon: "FileSpreadsheet"
+      tags: ["BRD Authoring", "FRD Authoring", "Gap Analysis", "Process Mapping"]
     },
     {
       id: "qa-testing",
       title: "Quality & Functional Testing",
       desc: "Test case design & structured execution, UAT coordination & sign-off documentation, defect logging & tracking, regression testing, and hypercare support.",
-      tags: ["UAT Coordination", "Test Case Design", "Defect Triage", "Regression Testing"],
-      icon: "CheckCircle2"
+      tags: ["UAT Coordination", "Test Case Design", "Defect Triage", "Regression Testing"]
     },
     {
       id: "documentation-training",
       title: "Documentation & Training",
       desc: "Standard Operating Procedures (SOPs), process flowcharts, technical handovers, and rotational batch end-user training & enablement across branch locations.",
-      tags: ["SOP Authoring", "Process Flowcharts", "User Enablement", "Handover Notes"],
-      icon: "BookOpen"
+      tags: ["SOP Authoring", "Process Flowcharts", "User Enablement", "Handover Notes"]
     },
     {
       id: "tools-platforms",
       title: "Enterprise Tools & Platforms",
       desc: "Hands-on functional knowledge of enterprise ERP environments, advanced spreadsheet reconciliation, and agile task tracking boards.",
-      tags: ["Odoo", "ERPNext / Frappe", "MS Excel", "PowerPoint", "Jira"],
-      icon: "Cpu"
+      tags: ["Odoo", "ERPNext / Frappe", "MS Excel", "PowerPoint", "Jira"]
     }
   ],
 
@@ -115,37 +185,6 @@ export const portfolioData = {
     }
   ],
 
-  projects: [
-    {
-      title: "Jewellery Retail ERP Implementation",
-      platform: "Odoo ERP",
-      year: "2026",
-      scope: "Live Multi-Module Rollout Across 9 Retail Store Locations",
-      desc: "Coordinated a live multi-module Odoo rollout across nine retail locations — managing requirements gathering, change control, BRD/FRD-aligned SOPs, UAT planning & execution, and rotational batch end-user training.",
-      highlights: [
-        "Coordinated 9 retail branches simultaneously",
-        "CRM, POS, Purchase, Inventory, Accounts, HR",
-        "Author of 18+ store operational SOP manuals",
-        "100% UAT sign-off prior to scheduled cutover"
-      ],
-      tags: ["Odoo ERP", "9 Store Locations", "UAT Sign-off", "SOP Library", "Change Control"]
-    },
-    {
-      title: "Fleet Management System",
-      platform: "ERPNext / Frappe",
-      year: "2025 – 2026",
-      scope: "End-to-End Requirements to Deployment Workflow",
-      desc: "Self-directed project covering vehicle tracking, maintenance scheduling, and fuel logging, built to practice requirements-to-deployment workflow end to end on the ERPNext / Frappe framework.",
-      highlights: [
-        "State-machine vehicle trip dispatch tracking",
-        "Automated preventive maintenance triggers at 5,000 km",
-        "Driver allowance calculation and expense auditing",
-        "General Ledger financial synchronization"
-      ],
-      tags: ["ERPNext", "Frappe Framework", "Fleet Logistics", "Maintenance Triggers", "Full SDLC"]
-    }
-  ],
-
   education: [
     {
       degree: "Master of Computer Applications (MCA)",
@@ -159,6 +198,19 @@ export const portfolioData = {
       period: "2020 – 2023",
       note: "Scientific observation, methodology & structured documentation"
     }
+  ],
+
+  skillsList: [
+    { name: "Odoo ERP (v16/v17/v18)", category: "ERP Core" },
+    { name: "ERPNext & Frappe Framework", category: "ERP Core" },
+    { name: "BRD / FRD Documentation", category: "Business Analysis" },
+    { name: "UAT Planning & Execution", category: "Quality Assurance" },
+    { name: "Test Case Design & Defect Logging", category: "Quality Assurance" },
+    { name: "Standard Operating Procedures (SOP)", category: "Documentation" },
+    { name: "Change Control & Jira / Trello", category: "Project Coordination" },
+    { name: "MS Excel (Large Dataset Reconciliation)", category: "Data & Analysis" },
+    { name: "Process Mapping & BPMN", category: "Business Analysis" },
+    { name: "End-User Training (9 Store Rollout)", category: "Implementation" }
   ],
 
   languages: [

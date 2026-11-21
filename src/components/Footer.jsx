@@ -7,31 +7,30 @@ export default function Footer({ profile }) {
   };
 
   return (
-    <footer className="py-12 border-t border-[#8b5cf6]/20 bg-[#05020e] relative z-10 text-center">
-      <div className="container">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
-          
-          <div className="text-left font-mono">
-            <div className="text-xs font-bold text-white tracking-widest uppercase">
-              {profile.name} // EARTH GROUND CONTROL
-            </div>
-            <div className="text-[10px] text-slate-400">
-              COORDINATES: KOCHI, KERALA, INDIA [09°58'N 76°17'E] • RELOCATION: UAE / GCC &amp; INDIA
-            </div>
+    <footer className="py-10 border-t border-white/5 bg-[#070305] relative z-10 text-center">
+      <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <div className="text-left">
+          <div className="font-bebas text-xl text-white tracking-wider">
+            {profile.name} <span className="text-red-500">.</span>
           </div>
-
-          <div className="text-[10px] font-mono text-slate-500">
-            © 2026 ADITHIYA B VINU • CELESTIAL PORTFOLIO
+          <div className="text-xs text-slate-400">
+            ERP Functional Consultant | QA &amp; UAT Lead • Kochi, Kerala &amp; UAE / GCC Relocation
           </div>
-
-          <button
-            onClick={scrollToTop}
-            className="w-9 h-9 bg-[#120a2e] border border-[#8b5cf6]/40 hover:border-[#38bdf8] text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer rounded"
-            aria-label="Back to top"
-          >
-            <ArrowUp size={16} />
-          </button>
         </div>
+
+        <div className="text-xs text-slate-500">
+          © 2026 Adithiya B Vinu. All rights reserved.
+        </div>
+
+        <button
+          onClick={scrollToTop}
+          className="w-9 h-9 rounded bg-white/5 hover:bg-red-600 text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
+          aria-label="Back to top"
+        >
+          <ArrowUp size={16} />
+        </button>
+
       </div>
     </footer>
   );

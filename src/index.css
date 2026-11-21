@@ -1,39 +1,36 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   SPACE-THEMED CELESTIAL PORTFOLIO DESIGN
-   Inspired by Jayendra Awasthi's "Space themed portfolio" Figma Template
+   EDITORIAL CRIMSON & OBSIDIAN DESIGN
+   Inspired by Pinterest Modern Web Designer / Developer Portfolio
    Candidate: Adithiya B Vinu — ERP Functional Consultant | QA & UAT
    ========================================================================== */
 
 :root {
-  --bg-deep-space: #060312;
-  --bg-space-surface: #0b061d;
-  --bg-card: rgba(14, 8, 32, 0.75);
-  --bg-card-hover: rgba(22, 12, 48, 0.9);
+  --bg-deep: #090407;
+  --bg-surface: #0e060b;
+  --bg-card: rgba(18, 8, 14, 0.75);
+  --bg-card-hover: rgba(28, 12, 22, 0.9);
 
-  --space-purple: #8b5cf6;
-  --space-violet: #a855f7;
-  --space-lilac: #d8b4fe;
-  --space-cyan: #38bdf8;
-  --space-cyan-glow: rgba(56, 189, 248, 0.5);
-  --space-nebula: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
-  --space-glow: 0 0 25px rgba(139, 92, 246, 0.5);
+  --red-primary: #ff2a3b;
+  --red-accent: #e11d48;
+  --red-dark: #9f1239;
+  --red-glow: rgba(225, 29, 72, 0.45);
+  --red-subtle: rgba(225, 29, 72, 0.1);
 
-  --earth-blue: #0ea5e9;
-  --earth-deep: #032b69;
+  --text-main: #ffffff;
+  --text-body: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
 
-  --text-main: #f8fafc;
-  --text-body: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-red: rgba(225, 29, 72, 0.3);
+  --border-red-hover: rgba(255, 42, 59, 0.6);
 
-  --border-space: rgba(168, 85, 247, 0.2);
-  --border-space-hover: rgba(56, 189, 248, 0.6);
-
-  --font-display: 'Orbitron', monospace;
-  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-bebas: 'Bebas Neue', -apple-system, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
 
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -47,12 +44,12 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-deep-space);
+  background-color: var(--bg-deep);
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-deep-space);
+  background-color: var(--bg-deep);
   color: var(--text-body);
   line-height: 1.6;
   overflow-x: hidden;
@@ -60,173 +57,70 @@ body {
 }
 
 ::selection {
-  background: var(--space-purple);
+  background: var(--red-primary);
   color: #ffffff;
 }
 
-/* Custom Cosmic Scrollbar */
+/* Custom Crimson Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #060312;
+  background: #090407;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c1038;
+  background: #230d17;
   border-radius: 9999px;
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  border: 1px solid rgba(225, 29, 72, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--space-purple);
-  box-shadow: 0 0 10px var(--space-purple);
+  background: var(--red-primary);
+  box-shadow: 0 0 12px var(--red-primary);
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1220px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
   padding-right: 24px;
 }
 
-.font-display {
-  font-family: var(--font-display);
+.font-bebas {
+  font-family: var(--font-bebas);
 }
 
-.font-heading {
-  font-family: var(--font-heading);
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
 }
 
 /* ==========================================================================
-   CYBER & ARCADE DISPLAY TYPOGRAPHY (Figma Space Reference Signature)
+   GIANT BACKDROP CONDENSED TYPOGRAPHY (Pinterest Signature Feature)
    ========================================================================== */
-
-/* Hollow Cyber Arcade Headline */
-.cyber-hollow-title {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  color: transparent;
-  -webkit-text-stroke: 1.8px #d8b4fe;
-  text-shadow: 
-    0 0 20px rgba(168, 85, 247, 0.5),
-    0 0 45px rgba(139, 92, 246, 0.25);
-  transition: all 0.3s ease;
-}
-
-.cyber-hollow-title:hover {
-  -webkit-text-stroke: 1.8px #ffffff;
-  text-shadow: 
-    0 0 25px rgba(216, 180, 254, 0.8),
-    0 0 50px rgba(56, 189, 248, 0.6);
-}
-
-/* Hollow Cyber Arcade Subtitle */
-.cyber-hollow-name {
-  font-family: 'Orbitron', monospace;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px #a855f7;
-  text-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
-}
-
-/* Cyber HUD Box Bracket Tags */
-.hud-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Orbitron', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.giant-portfolio-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5.5rem, 16vw, 15rem);
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  color: #e11d48;
   text-transform: uppercase;
-  color: #c084fc;
-  padding: 6px 14px;
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  position: relative;
-}
-
-.hud-badge::before,
-.hud-badge::after {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-color: #38bdf8;
-}
-.hud-badge::before {
-  top: -1px;
-  left: -1px;
-  border-top: 2px solid;
-  border-left: 2px solid;
-}
-.hud-badge::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-}
-
-/* Cyber Corner Reticles for Cards */
-.hud-card {
-  position: relative;
-  background: rgba(13, 8, 28, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  transition: var(--transition);
-}
-
-.hud-card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #8b5cf6;
-  border-left: 2px solid #8b5cf6;
-  transition: all 0.3s ease;
+  user-select: none;
   pointer-events: none;
+  text-align: center;
+  width: 100%;
 }
 
-.hud-card::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  right: -1px;
-  width: 8px;
-  height: 8px;
-  border-bottom: 2px solid #38bdf8;
-  border-right: 2px solid #38bdf8;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.hud-card:hover {
-  border-color: rgba(168, 85, 247, 0.5);
-  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
-  transform: translateY(-3px);
-}
-
-.hud-card:hover::before {
-  width: 14px;
-  height: 14px;
-  border-color: #38bdf8;
-}
-
-.hud-card:hover::after {
-  width: 14px;
-  height: 14px;
-  border-color: #a855f7;
-}
-
-/* ==========================================================================
-   METEOR / SHOOTING STARS ANIMATION
-   ========================================================================== */
-.space-backdrop {
+/* Ambient Crimson Glow */
+.ambient-glow-mesh {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -234,284 +128,94 @@ body {
   overflow: hidden;
 }
 
-/* Shooting star streak */
-.meteor {
+.glow-orb-top {
   position: absolute;
-  width: 140px;
-  height: 2px;
-  background: linear-gradient(90deg, #ffffff, #38bdf8, transparent);
-  border-radius: 9999px;
-  opacity: 0;
-  transform: rotate(-35deg);
-  animation: meteorStreak 6s linear infinite;
-}
-
-.meteor::before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 12px 3px #38bdf8;
-  top: -1px;
-  left: 0;
-}
-
-@keyframes meteorStreak {
-  0% {
-    opacity: 0;
-    transform: rotate(-35deg) translateX(0);
-  }
-  8% {
-    opacity: 1;
-  }
-  24% {
-    opacity: 0;
-    transform: rotate(-35deg) translateX(-700px);
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(-35deg) translateX(-700px);
-  }
-}
-
-/* Twinkling Stars */
-.star-particle {
-  position: absolute;
-  border-radius: 50%;
-  background: #ffffff;
-  animation: starTwinkle 3s ease-in-out infinite alternate;
-}
-
-@keyframes starTwinkle {
-  0% { opacity: 0.2; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 6px #fff; }
-}
-
-/* Cosmic Nebula Clouds */
-.nebula-cloud-1 {
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 600px;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
   height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(225, 29, 72, 0.16) 0%, rgba(159, 18, 57, 0.05) 50%, transparent 75%);
   border-radius: 50%;
-  filter: blur(40px);
-  animation: nebulaDrift 20s ease-in-out infinite alternate;
+  filter: blur(60px);
 }
 
-.nebula-cloud-2 {
+.glow-orb-bottom {
   position: absolute;
-  top: 35%;
-  right: 5%;
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 70%);
+  bottom: 10%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.1) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(50px);
-  animation: nebulaDrift 25s ease-in-out infinite alternate-reverse;
+  filter: blur(70px);
 }
 
-@keyframes nebulaDrift {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.08) translate(25px, -15px); }
-  100% { transform: scale(0.95) translate(-15px, 20px); }
+/* Editorial Card & Border Styling */
+.editorial-card {
+  background: rgba(16, 7, 13, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
 }
 
-/* ==========================================================================
-   PLANET EARTH HORIZON & ASTRONAUT
-   ========================================================================== */
-
-/* The Glowing Earth Horizon Curve */
-.earth-horizon-stage {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.earth-globe-arc {
-  position: relative;
-  width: 100%;
-  height: 270px;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-  background: radial-gradient(ellipse at 50% 100%, #154585 0%, #0a1f42 60%, #040d1f 100%);
-  border-top: 3px solid #38bdf8;
-  box-shadow: 
-    0 -15px 50px rgba(56, 189, 248, 0.6),
-    0 -30px 100px rgba(139, 92, 246, 0.4),
-    inset 0 15px 35px rgba(56, 189, 248, 0.4);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Atmospheric Horizon Glow Beam */
-.earth-atmosphere-halo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: linear-gradient(90deg, transparent, #38bdf8 25%, #ffffff 50%, #38bdf8 75%, transparent);
-  filter: blur(4px);
-}
-
-/* Targeting Reticle Interaction Box */
-.hud-target-reticle {
-  font-family: 'Orbitron', monospace;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 12px 28px;
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background: rgba(8, 16, 40, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.hud-target-reticle::before,
-.hud-target-reticle::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-}
-
-.hud-target-reticle::before {
-  top: -2px;
-  left: -2px;
-  border-top: 2px solid #38bdf8;
-  border-left: 2px solid #38bdf8;
-}
-
-.hud-target-reticle::after {
-  bottom: -2px;
-  right: -2px;
-  border-bottom: 2px solid #38bdf8;
-  border-right: 2px solid #38bdf8;
-}
-
-.hud-target-reticle:hover {
-  background: rgba(14, 30, 70, 0.9);
-  border-color: #38bdf8;
-  box-shadow: 
-    0 0 35px rgba(56, 189, 248, 0.7),
-    0 0 60px rgba(139, 92, 246, 0.5);
-  transform: scale(1.05);
-}
-
-.hud-target-reticle:hover::before,
-.hud-target-reticle:hover::after {
-  width: 14px;
-  height: 14px;
-  border-color: #ffffff;
-}
-
-/* Astronaut Gentle Floating */
-@keyframes astronautFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-7px) rotate(0.8deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-.animate-astronaut-float {
-  animation: astronautFloat 4.5s ease-in-out infinite;
-}
-
-/* Orbital Animations */
-@keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes orbitSpinReverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-}
-
-.animate-orbit-spin {
-  animation: orbitSpin 35s linear infinite;
-}
-
-.animate-orbit-spin-slow {
-  animation: orbitSpin 55s linear infinite;
-}
-
-.animate-orbit-reverse {
-  animation: orbitSpinReverse 35s linear infinite;
-}
-
-.animate-orbit-reverse-slow {
-  animation: orbitSpinReverse 55s linear infinite;
+.editorial-card:hover {
+  border-color: rgba(225, 29, 72, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.3);
+  transform: translateY(-3px);
 }
 
 /* Buttons */
-.btn-space-primary {
+.btn-crimson-solid {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-family: 'Orbitron', monospace;
-  font-size: 11px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #ffffff;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-  border: 1px solid rgba(168, 85, 247, 0.5);
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #ff2a3b 0%, #e11d48 100%);
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(225, 29, 72, 0.4);
   transition: var(--transition);
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn-space-primary:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-  border-color: #38bdf8;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+.btn-crimson-solid:hover {
+  background: linear-gradient(135deg, #ff4757 0%, #f43f5e 100%);
+  box-shadow: 0 6px 28px rgba(255, 42, 59, 0.6);
   transform: translateY(-2px);
 }
 
-.btn-space-glass {
+.btn-crimson-outline {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-family: 'Orbitron', monospace;
-  font-size: 11px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #cbd5e1;
+  color: #ffffff;
   padding: 12px 22px;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
   transition: var(--transition);
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn-space-glass:hover {
-  color: #ffffff;
-  background: rgba(139, 92, 246, 0.15);
-  border-color: #8b5cf6;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+.btn-crimson-outline:hover {
+  border-color: var(--red-primary);
+  background: rgba(225, 29, 72, 0.15);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
   transform: translateY(-2px);
 }
