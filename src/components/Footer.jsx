@@ -7,21 +7,26 @@ export default function Footer({ profile }) {
   };
 
   return (
-    <footer className="py-12 border-t border-white/5 bg-[#050608] relative z-10 text-center">
+    <footer className="py-12 border-t border-[#8b5cf6]/20 bg-[#05020e] relative z-10 text-center">
       <div className="container">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
-          <div className="text-left">
-            <div className="text-sm font-bold text-white">{profile.name}</div>
-            <div className="text-xs text-slate-400">{profile.headline}</div>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
+          
+          <div className="text-left font-mono">
+            <div className="text-xs font-bold text-white tracking-widest uppercase">
+              {profile.name} // EARTH GROUND CONTROL
+            </div>
+            <div className="text-[10px] text-slate-400">
+              COORDINATES: KOCHI, KERALA, INDIA [09°58'N 76°17'E] • RELOCATION: UAE / GCC &amp; INDIA
+            </div>
           </div>
 
-          <div className="text-xs text-slate-500">
-            © 2026 Adithiya B Vinu. All rights reserved.
+          <div className="text-[10px] font-mono text-slate-500">
+            © 2026 ADITHIYA B VINU • CELESTIAL PORTFOLIO
           </div>
 
           <button
             onClick={scrollToTop}
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#ff6b00] text-slate-400 hover:text-white flex items-center justify-center transition-colors"
+            className="w-9 h-9 bg-[#120a2e] border border-[#8b5cf6]/40 hover:border-[#38bdf8] text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer rounded"
             aria-label="Back to top"
           >
             <ArrowUp size={16} />
