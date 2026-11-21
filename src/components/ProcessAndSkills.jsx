@@ -61,27 +61,37 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
               COLUMN 2: WORK PROCESS PIPELINE (5 Cols)
               =================================================================== */}
           <div className="lg:col-span-5 editorial-card p-6 sm:p-8 rounded-2xl">
-            <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
-              <h3 className="font-bebas text-3xl text-white tracking-wide">
+            {/* Heading Container with Safe Spacing */}
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-bebas text-3xl text-white tracking-wide leading-none">
                 WORK PROCESS
               </h3>
               <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
                 Full SDLC Delivery
               </span>
             </div>
+            <div className="w-full h-px bg-white/10 mb-6"></div>
 
-            {/* Vertical Step-by-Step Pipeline */}
-            <div className="relative pl-6 space-y-6 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-[2px] before:bg-gradient-to-b before:from-red-500 before:via-rose-600 before:to-red-950">
-              {workProcess.map((item) => (
-                <div key={item.step} className="relative group">
-                  {/* Step Circle Indicator */}
-                  <div className="absolute -left-[27px] top-0.5 w-6 h-6 rounded-full bg-[#0e060b] border-2 border-red-500 flex items-center justify-center font-bebas text-xs text-white group-hover:scale-110 group-hover:bg-red-600 transition-all shadow-md shadow-red-600/30">
-                    {item.step}
+            {/* Step-by-Step Pipeline with Isolated Columns so Line Never Crosses Text */}
+            <div className="space-y-4">
+              {workProcess.map((item, index) => (
+                <div key={item.step} className="flex items-start gap-3.5 group">
+                  
+                  {/* Left Column: Number Badge + Connecting Line */}
+                  <div className="flex flex-col items-center shrink-0 w-8">
+                    <div className="w-8 h-8 rounded-full bg-[#12080e] border-2 border-red-500 flex items-center justify-center font-bebas text-sm text-white group-hover:bg-red-600 transition-colors shadow-md shadow-red-600/30">
+                      {item.step}
+                    </div>
+                    {/* Connecting line to next step */}
+                    {index < workProcess.length - 1 && (
+                      <div className="w-0.5 h-12 bg-gradient-to-b from-red-500 via-rose-600 to-red-950 my-1"></div>
+                    )}
                   </div>
 
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <h4 className="text-sm font-bold text-white group-hover:text-red-400 transition-colors">
+                  {/* Right Column: Title, Tag & Description (Completely Isolated from Line) */}
+                  <div className="flex-1 pt-0.5">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                      <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-red-400 transition-colors">
                         {item.title}
                       </h4>
                       <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-950/40 border border-red-500/30 text-red-300">
@@ -93,6 +103,7 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
                       {item.desc}
                     </p>
                   </div>
+
                 </div>
               ))}
             </div>
