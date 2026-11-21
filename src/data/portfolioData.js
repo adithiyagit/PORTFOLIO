@@ -2,13 +2,14 @@ export const portfolioData = {
   profile: {
     name: "Adithiya B Vinu",
     roles: [
+      "ERP Functional Consultant",
+      "Project Coordinator & QA Lead",
       "Junior Project Manager",
-      "ERP Software Functional Specialist",
-      "QA & UAT Delivery Lead",
       "Odoo Implementation Specialist"
     ],
-    headline: "Junior Project Manager | ERP Software Functional | QA & UAT",
+    headline: "ERP Functional Consultant | Project Coordinator | QA & UAT",
     subtitle: "Odoo Implementation & Business Process Delivery",
+    hook: "Judges a business process by its edge cases.",
     photo: "assets/images/adithiya-photo.jpg",
     email: "adithiyavinu.b@gmail.com",
     phone: "+91 96337 83038",
@@ -21,13 +22,24 @@ export const portfolioData = {
     nationality: "Indian"
   },
 
-  summary: "ERP professional with hands-on experience across the full implementation lifecycle — functional testing, UAT, BRD/FRD documentation, and change control — on a live, multi-module Odoo rollout. Skilled at analyzing business processes against system capabilities, identifying gaps, and translating requirements into validated configurations, while bridging business users, developers, and vendors. Seeking structured ERP Functional, Business Analyst, or Project Manager roles.",
+  summary: "ERP professional with hands-on experience across the full implementation lifecycle — functional testing, UAT, BRD/FRD documentation, and change control — on a live, multi-module Odoo rollout. Skilled at analyzing business processes against system capabilities, identifying gaps, and translating requirements into validated configurations, while bridging business users, developers, and vendors. Seeking a structured ERP Functional Consultant, Business Analyst, or Project Coordinator role.",
 
   metrics: [
-    { value: "9", label: "Retail Stores", desc: "Live multi-module Odoo rollout" },
-    { value: "Full SDLC", label: "Delivery Scope", desc: "Requirements → Deploy" },
-    { value: "100%", label: "UAT Sign-off", desc: "Zero critical blockers on cutover" },
-    { value: "Immediate", label: "Availability", desc: "Pan-India & UAE/GCC Ready" }
+    { value: "9 Stores", label: "Retail Rollout", desc: "Live multi-module Odoo rollout across 9 store locations" },
+    { value: "Full SDLC", label: "Delivery Scope", desc: "Requirements → Design → Build → UAT → Deploy" },
+    { value: "100%", label: "UAT Sign-off", desc: "Zero critical blockers on scheduled store cutovers" },
+    { value: "Immediate", label: "Availability", desc: "Ready for Pan-India & UAE/GCC Relocation" }
+  ],
+
+  orbitalTech: [
+    { name: "Odoo ERP", category: "Core Platform", orbit: "inner", angle: 0 },
+    { name: "ERPNext", category: "Frappe Framework", orbit: "inner", angle: 120 },
+    { name: "UAT & QA", category: "Sign-off Testing", orbit: "inner", angle: 240 },
+    { name: "BRD / FRD", category: "Business Analysis", orbit: "outer", angle: 45 },
+    { name: "Jira & Trello", category: "Change Control", orbit: "outer", angle: 110 },
+    { name: "MS Excel", category: "Data Reconciliation", orbit: "outer", angle: 180 },
+    { name: "Process Mapping", category: "BPMN & Workflows", orbit: "outer", angle: 250 },
+    { name: "Python Basics", category: "Technical Bridge", orbit: "outer", angle: 315 }
   ],
 
   competencies: [
@@ -42,7 +54,7 @@ export const portfolioData = {
       id: "stakeholder-vendor",
       title: "Stakeholder & Vendor Coordination",
       desc: "Functional liaison between business users, developers, and third-party vendors. Meeting facilitation, minutes of meeting (MoM), and actionable task tracking.",
-      tags: ["Vendor Liaison", "Meeting Facilitation", "MoM Tracking", "Stakeholder Alignment"],
+      tags: ["Vendor Liaison", "Meeting Facilitation", "Action Tracking", "Stakeholder Alignment"],
       icon: "Users"
     },
     {
@@ -77,7 +89,7 @@ export const portfolioData = {
 
   experience: [
     {
-      role: "Junior Project Manager",
+      role: "Junior Project Manager cum Functional Consultant",
       company: "Empire AE IT Services",
       location: "Kochi, Kerala, India",
       period: "Jan 2026 – Present",

@@ -9,7 +9,8 @@ export default function Navbar({ resumeUrl }) {
   const navLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Competencies', href: '#competencies' },
+    { name: 'Cosmos', href: '#cosmos' },
+    { name: 'Services', href: '#competencies' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
@@ -19,7 +20,7 @@ export default function Navbar({ resumeUrl }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'about', 'competencies', 'experience', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'cosmos', 'competencies', 'experience', 'projects', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (const section of sections) {
@@ -44,16 +45,16 @@ export default function Navbar({ resumeUrl }) {
       <nav
         className={`w-full max-w-4xl rounded-full px-4 py-2.5 transition-all duration-300 flex items-center justify-between ${
           scrolled
-            ? 'bg-[#0f111a]/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/60'
-            : 'bg-[#12141f]/80 backdrop-blur-lg border border-white/5 shadow-lg shadow-black/40'
+            ? 'bg-[#0a0b16]/90 backdrop-blur-xl border border-[#8b5cf6]/20 shadow-2xl shadow-[#8b5cf6]/10'
+            : 'bg-[#0f1020]/80 backdrop-blur-lg border border-white/5 shadow-lg shadow-black/40'
         }`}
       >
         {/* Brand Monogram */}
         <a href="#hero" className="flex items-center gap-2.5 group text-decoration-none">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff6b00] to-[#ffa14a] flex items-center justify-center font-bold text-white text-xs tracking-tight shadow-md shadow-[#ff6b00]/30 group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#8b5cf6] to-[#6366f1] flex items-center justify-center font-bold text-white text-xs tracking-tight shadow-lg shadow-[#8b5cf6]/40 group-hover:scale-105 transition-transform">
             ABV
           </div>
-          <span className="hidden sm:inline-block font-semibold text-sm text-white tracking-wide group-hover:text-[#ff8526] transition-colors">
+          <span className="hidden sm:inline-block font-semibold text-sm text-white tracking-wide group-hover:text-[#a78bfa] transition-colors">
             Adithiya B Vinu
           </span>
         </a>
@@ -68,7 +69,7 @@ export default function Navbar({ resumeUrl }) {
                 href={link.href}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 text-decoration-none ${
                   isActive
-                    ? 'bg-[#ff6b00] text-white shadow-md shadow-[#ff6b00]/40'
+                    ? 'bg-gradient-to-r from-[#7c3aed] to-[#6366f1] text-white shadow-md shadow-[#7c3aed]/40'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -83,7 +84,7 @@ export default function Navbar({ resumeUrl }) {
           <a
             href={resumeUrl}
             download
-            className="flex items-center gap-1.5 bg-gradient-to-r from-[#ff6b00] to-[#ff8c1a] hover:from-[#ff7d1a] hover:to-[#ffa142] text-white text-xs font-bold px-4 py-2 rounded-full transition-all duration-200 shadow-md shadow-[#ff6b00]/30 hover:shadow-lg hover:shadow-[#ff6b00]/50 hover:-translate-y-0.5"
+            className="flex items-center gap-1.5 bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] hover:from-[#7c3aed] hover:to-[#4f46e5] text-white text-xs font-bold px-4 py-2 rounded-full transition-all duration-200 shadow-md shadow-[#8b5cf6]/30 hover:shadow-lg hover:shadow-[#8b5cf6]/50 hover:-translate-y-0.5"
           >
             <FileText size={13} />
             <span>Resume</span>
@@ -101,7 +102,7 @@ export default function Navbar({ resumeUrl }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-20 inset-x-4 bg-[#12141f]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2 z-50 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden fixed top-20 inset-x-4 bg-[#0e0f20]/95 backdrop-blur-2xl border border-[#8b5cf6]/20 rounded-2xl p-4 shadow-2xl flex flex-col gap-2 z-50 animate-in fade-in slide-in-from-top-4 duration-200">
           {navLinks.map((link) => (
             <a
               key={link.name}
