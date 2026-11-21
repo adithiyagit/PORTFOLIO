@@ -104,23 +104,26 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
           <div className="lg:col-span-3 space-y-6">
             
             {/* The Signature Red Quote Card (Pinterest Reference) */}
-            <div className="bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white p-6 sm:p-7 rounded-2xl shadow-xl shadow-red-900/30 relative overflow-hidden group">
-              <Quote size={32} className="text-white/20 mb-3" />
+            <div className="bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white p-6 sm:p-7 rounded-2xl shadow-xl shadow-red-900/30 relative overflow-visible group">
+              <Quote size={32} className="text-white/25 mb-3" />
               
               <p className="font-serif italic text-sm sm:text-base leading-relaxed text-white/95 mb-6">
                 "{profile.quote}"
               </p>
 
-              <div className="pt-4 border-t border-white/20 flex items-center justify-between">
-                <div>
-                  <div className="font-bebas text-xl tracking-wider text-white">
+              <div className="pt-4 border-t border-white/25 flex items-center justify-between gap-4">
+                <div className="pl-1">
+                  <div className="font-bebas text-xl sm:text-2xl tracking-wider text-white mb-0.5">
                     {profile.name}
                   </div>
-                  <div className="text-[10px] uppercase font-bold text-red-200">
-                    Functional Consultant
+                  <div className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>
+                    <span>
+                      <span className="text-white font-black text-sm">F</span>unctional Consultant
+                    </span>
                   </div>
                 </div>
-                <div className="font-script text-xl text-red-200">
+                <div className="font-script text-2xl text-white/90 shrink-0">
                   Adithiya
                 </div>
               </div>
