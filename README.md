@@ -1,47 +1,67 @@
-# Adithiya B Vinu - Personal Portfolio Website
+# Adithiya B Vinu - Modern Animated React Portfolio
 
-A simple, elegant, and informative single-page portfolio for **Adithiya B Vinu**, directly reflecting their professional resume:
+A modern, highly animated, dark-themed personal portfolio built with **React 19**, **Tailwind CSS v4**, and **Vite**, featuring ambient background glow meshes, role typewriter effects, and glassmorphic card architecture.
 
 > **Junior Project Manager | ERP Software Functional | QA & UAT**  
 > *Odoo Implementation & Business Process Delivery*
 
 ---
 
-## 🌟 Design & Structure
+## ⚡ Live Deployment
 
-- **Aesthetic:** Clean Editorial Executive / Quiet Luxury (Porcelain canvas, Midnight Navy typography, Champagne Gold accents, and subtle borders).
-- **Tone:** Refined, authoritative, and uncluttered. Zero bloated case study tabs or modals.
-- **Content Scope:** 100% faithful to the official resume:
-  - **Key Competencies:** Project Delivery & Change Control, Stakeholder & Vendor Coordination, Business Analysis, Quality & Functional Testing, Documentation & Training, Tools.
-  - **Experience:** Empire AE IT Services (Junior Project Manager, Jan 2026 – Present), Turqosoft Solutions (Python / ERPNext Developer — Intern, Nov 2025 – Jan 2026).
-  - **Relevant Projects:** Jewellery Retail ERP Implementation (Odoo, 9 stores), Fleet Management System (ERPNext).
-  - **Education & Personal Details:** MCA (2024–2026), BSc Botany (2020–2023), Languages (English, Malayalam, Tamil, Hindi), Immediate Availability, Open to Relocation.
-  - **Recruiter Action Hub:** Direct WhatsApp, Email with 1-click copy, LinkedIn, and PDF resume download.
+👉 **[https://adithiyagit.github.io/PORTFOLIO/](https://adithiyagit.github.io/PORTFOLIO/)**
 
 ---
 
-## 📁 File Structure
+## 🛠 Tech Stack
+
+- **Frontend Framework:** React 19
+- **Build Tool:** Vite 6
+- **Styling:** Tailwind CSS v4 + Custom Glassmorphism & Ambient Glow Meshes
+- **Icons:** Lucide React
+- **Typography:** Space Grotesk (Headings) + Plus Jakarta Sans (Body)
+- **Deployment:** GitHub Pages (Automatic Relative Asset Pipeline)
+
+---
+
+## 💻 Local Development
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start Vite development server with Hot Module Replacement (HMR)
+npm run dev
+
+# 3. Build production bundle for deployment
+npm run build
+```
+
+---
+
+## 📁 Project Architecture
 
 ```
 Portfolio/
-├── index.html                   # Clean, semantic, accessible HTML5 layout
-├── css/
-│   └── style.css                # Quiet luxury editorial styling (Porcelain & Navy, Dark/Light modes)
-├── js/
-│   ├── content.js               # Single source of truth containing resume data
-│   └── app.js                   # Minimal interaction logic (theme toggle & copy utility)
-├── assets/
-│   ├── docs/
-│   │   └── Adithiya_B_Vinu_Resume.pdf # Downloadable resume PDF
-│   └── images/
-│       ├── profile-avatar.svg   # Monogram crest
-│       └── og-card.svg          # Social / Open Graph preview card
-└── README.md                    # Project documentation
+├── index.html                   # Compiled production entry point (GitHub Pages ready)
+├── package.json                 # Dependencies & build scripts
+├── vite.config.js               # Vite + React + Tailwind v4 configuration
+├── src/
+│   ├── index.html               # Source HTML template
+│   ├── main.jsx                 # React root mount
+│   ├── App.jsx                  # Main application orchestrator
+│   ├── index.css                # Tailwind imports + ambient glow animations
+│   ├── data/
+│   │   └── portfolioData.js     # Single source of truth for resume data
+│   └── components/
+│       ├── Navbar.jsx           # Floating glassmorphic pill navbar
+│       ├── Hero.jsx             # Animated typewriter, arch portrait & floating stat cards
+│       ├── Metrics.jsx          # 4-card KPI grid with glowing counters
+│       ├── Competencies.jsx     # 6 glassmorphic service cards
+│       ├── Experience.jsx       # Career timeline for Empire AE & Turqosoft
+│       ├── Projects.jsx         # Jewellery 9-Store ERP Rollout & Fleet ERP cards
+│       ├── EducationMobility.jsx# Academic & relocation readiness cards
+│       ├── ContactHub.jsx       # 1-click email copy, WhatsApp, LinkedIn, Resume
+│       └── Footer.jsx           # Clean dark footer with back-to-top
+└── assets/                      # Static images, documents, and compiled bundles
 ```
-
----
-
-## 🌐 Live Deployment (GitHub Pages)
-
-This site is deployed live on GitHub Pages:
-👉 **[https://adithiyagit.github.io/PORTFOLIO/](https://adithiyagit.github.io/PORTFOLIO/)**
