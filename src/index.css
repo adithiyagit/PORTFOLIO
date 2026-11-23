@@ -119,6 +119,66 @@ body {
   width: 100%;
 }
 
+/* ==========================================================================
+   HERO PORTRAIT OPENING ENTRANCE & FLOAT ANIMATIONS
+   ========================================================================== */
+@keyframes heroPortraitReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.94);
+    filter: blur(12px) contrast(0.88) brightness(0.82);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0.5px) contrast(1.08) brightness(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    filter: blur(0px) contrast(1.02) brightness(1.0);
+  }
+}
+
+@keyframes heroAuraBloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 35px) scale(0.4);
+    filter: blur(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0px) scale(1);
+    filter: blur(60px);
+  }
+}
+
+@keyframes portraitGentleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-portrait-entrance {
+  animation: heroPortraitReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.animate-portrait-floating {
+  animation: portraitGentleFloat 5.5s ease-in-out 1.5s infinite;
+  will-change: transform;
+}
+
+.animate-aura-bloom {
+  animation: heroAuraBloom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
 /* Ambient Crimson Glow */
 .ambient-glow-mesh {
   position: fixed;

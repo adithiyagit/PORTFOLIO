@@ -5,6 +5,8 @@ export default function Hero({ profile, deliveryHighlights = [] }) {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const currentRole = profile.roles[currentRoleIndex];
@@ -28,8 +30,30 @@ export default function Hero({ profile, deliveryHighlights = [] }) {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentRoleIndex, profile.roles]);
 
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({
+      x: Number((x * 10).toFixed(2)),
+      y: Number((-y * 10).toFixed(2))
+    });
+  };
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setTilt({ x: 0, y: 0 });
+  };
+
   return (
-    <section id="hero" className="pt-6 pb-12 sm:pb-16 overflow-hidden relative">
+    <section 
+      id="hero" 
+      className="pt-6 pb-12 sm:pb-16 overflow-hidden relative"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       
       {/* =====================================================================
           GIANT "PORTFOLIO" CONDENSED HEADLINE (Behind Center Cutout)
@@ -98,21 +122,32 @@ export default function Hero({ profile, deliveryHighlights = [] }) {
 
           {/* Center Column: TRANSPARENT CUTOUT PERSON (5 cols on lg) */}
           <div className="lg:col-span-5 flex justify-center items-end order-1 lg:order-2 relative z-10 -mb-6 sm:-mb-8">
-            <div className="relative w-full max-w-[380px] sm:max-w-[450px] lg:max-w-[480px] flex justify-center items-end">
+            <div 
+              className="relative w-full max-w-[380px] sm:max-w-[450px] lg:max-w-[480px] flex justify-center items-end transition-transform duration-300 ease-out"
+              style={{
+                transform: isHovered 
+                  ? `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)` 
+                  : 'perspective(1000px) rotateY(0deg) rotateX(0deg)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
               
               {/* Crimson Atmospheric Spotlight Glow Behind Cutout */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-80 h-80 bg-red-600/25 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute bottom-8 left-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-red-600/30 rounded-full blur-3xl pointer-events-none animate-aura-bloom"></div>
 
-              {/* The Seamless Transparent Cutout Image */}
-              <img
-                src={profile.photo}
-                alt={`${profile.name} - ERP Functional Consultant`}
-                className="relative z-10 w-full h-auto max-h-[520px] sm:max-h-[620px] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)] transition-transform duration-500 hover:scale-[1.02]"
-                style={{
-                  maskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)'
-                }}
-              />
+              {/* Seamless Floating Container (kicks in gently after entrance) */}
+              <div className="relative z-10 w-full flex justify-center items-end animate-portrait-floating">
+                {/* The Seamless Transparent Cutout Image with Opening Entrance Reveal */}
+                <img
+                  src={profile.photo}
+                  alt={`${profile.name} - ERP Functional Consultant`}
+                  className="relative z-10 w-full h-auto max-h-[520px] sm:max-h-[620px] object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] animate-portrait-entrance"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)'
+                  }}
+                />
+              </div>
 
             </div>
           </div>
