@@ -27,6 +27,41 @@ export const portfolioData = {
 
   summary: "ERP professional with hands-on experience across the full implementation lifecycle — functional testing, UAT, BRD/FRD documentation, and change control — on a live, multi-module Odoo rollout. Skilled at analyzing business processes against system capabilities, identifying gaps, and translating requirements into validated configurations, while bridging business users, developers, and vendors. Seeking a structured ERP Functional Consultant, Business Analyst, or Project Coordinator role.",
 
+  deliveryHighlights: [
+    {
+      metric: "09+",
+      unit: "Stores",
+      title: "Live Retail Rollout",
+      desc: "Simultaneous multi-module rollout across 9 store branches with rotational end-user training.",
+      badges: ["CRM", "POS", "Inventory", "Accounts", "HR"],
+      status: "Live & Stabilized"
+    },
+    {
+      metric: "100%",
+      unit: "Sign-off",
+      title: "UAT Quality Gate",
+      desc: "Zero critical blockers at scheduled cutover; structured test cases, defect triage, and regression sign-offs.",
+      progress: 100,
+      status: "Zero Blockers"
+    },
+    {
+      metric: "18+",
+      unit: "SOPs",
+      title: "SOP Library & Governance",
+      desc: "Comprehensive operational SOPs with tiered approval matrices across 6 core enterprise functions.",
+      badges: ["Purchase", "Sales", "HR", "Bank Recon", "Job Work"],
+      status: "Standardized"
+    },
+    {
+      metric: "SDLC",
+      unit: "Governance",
+      title: "Full Delivery Lifecycle",
+      desc: "Requirements → Gap Analysis → Build → UAT → Hypercare, managing change requests via Jira within SLAs.",
+      badges: ["Odoo", "ERPNext", "Jira", "MS Excel"],
+      status: "Full SDLC"
+    }
+  ],
+
   stats: [
     { number: "09+", label: "Stores Rollout", sub: "Live Multi-Module Odoo Implementation" },
     { number: "100%", label: "UAT Sign-off", sub: "Zero Critical Blockers at Store Cutover" },

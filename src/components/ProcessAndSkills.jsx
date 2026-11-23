@@ -236,23 +236,22 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
               </div>
             </div>
 
-            {/* Quick Action Pill Card */}
+            {/* Quick Contact Action Card */}
             <div className="editorial-card p-5 rounded-2xl flex items-center justify-between gap-3">
               <div>
                 <div className="text-xs font-bold text-white mb-0.5">
-                  Need Full Technical Specs?
+                  Ready to Discuss an ERP Role?
                 </div>
                 <div className="text-[11px] text-slate-400">
-                  Download complete verified resume PDF
+                  Open to relocation for India &amp; UAE / GCC opportunities
                 </div>
               </div>
 
               <a
-                href={profile.resumePdf}
-                download
-                className="btn-crimson-solid text-[10px] py-2 px-3 shrink-0"
+                href="#contact"
+                className="btn-crimson-solid text-[10px] py-2 px-3.5 shrink-0"
               >
-                Get PDF
+                Connect →
               </a>
             </div>
 

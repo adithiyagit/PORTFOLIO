@@ -24,7 +24,7 @@ export default function App() {
         
         <Hero
           profile={portfolioData.profile}
-          stats={portfolioData.stats}
+          deliveryHighlights={portfolioData.deliveryHighlights}
         />
 
         <Projects projects={portfolioData.projects} />

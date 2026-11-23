@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Mail, CheckCircle2, Store, ShieldCheck, BookOpen, Layers } from 'lucide-react';
 
-export default function Hero({ profile, stats }) {
+export default function Hero({ profile, deliveryHighlights = [] }) {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -42,7 +42,7 @@ export default function Hero({ profile, stats }) {
 
       <div className="container relative z-10 pt-8 sm:pt-12">
         
-        {/* 3-Column Hero Grid: Left Content | Center Transparent Cutout | Right Stats */}
+        {/* 3-Column Hero Grid: Left Content | Center Transparent Cutout | Right Enhanced Proof Console */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           
           {/* Left Column: Bio & Name (4 cols on lg) */}
@@ -64,26 +64,25 @@ export default function Hero({ profile, stats }) {
             </div>
 
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
-              ERP Functional Consultant bridging business operations and technical execution. Specialized in multi-module Odoo implementations, UAT governance, and 9-store retail rollouts.
+              ERP Functional Consultant bridging business operations and technical delivery. Specialized in multi-module Odoo implementations, UAT governance, and 9-store retail rollouts.
             </p>
 
-            {/* Action Buttons */}
+            {/* Primary Action Buttons (NO duplicate resume button) */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <a
                 href="#projects"
                 className="btn-crimson-solid"
               >
-                <span>View Projects</span>
+                <span>View Selected Projects</span>
                 <ArrowUpRight size={14} />
               </a>
 
               <a
-                href={profile.resumePdf}
-                download
+                href="#contact"
                 className="btn-crimson-outline flex items-center gap-2"
               >
-                <FileText size={14} className="text-red-400" />
-                <span>Download Resume</span>
+                <Mail size={14} className="text-red-400" />
+                <span>Get in Touch</span>
               </a>
             </div>
 
@@ -118,24 +117,94 @@ export default function Hero({ profile, stats }) {
             </div>
           </div>
 
-          {/* Right Column: Vertical Stat Counters (3 cols on lg) */}
-          <div className="lg:col-span-3 flex flex-col gap-3.5 order-3 pb-2 lg:pb-6 z-20">
-            {stats.map((st) => (
-              <div
-                key={st.label}
-                className="editorial-card p-4 rounded-xl text-left border-l-2 hover:border-l-red-500 transition-all group"
-              >
-                <div className="font-bebas text-3xl sm:text-4xl text-white group-hover:text-red-500 transition-colors leading-none mb-0.5">
-                  {st.number}
-                </div>
-                <div className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-0.5">
-                  {st.label}
-                </div>
-                <div className="text-[11px] text-slate-400 leading-tight">
-                  {st.sub}
-                </div>
+          {/* Right Column: ENHANCED EXECUTIVE IMPLEMENTATION CONSOLE (3 cols on lg) */}
+          <div className="lg:col-span-3 flex flex-col gap-3 order-3 pb-2 lg:pb-6 z-20">
+            
+            {/* 1. Live Multi-Store Rollout Card */}
+            <div className="editorial-card p-3.5 sm:p-4 rounded-xl text-left border-l-2 border-l-red-500 hover:border-l-red-400 transition-all group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors leading-none">
+                  09+ <span className="text-xs font-mono text-red-400 font-bold uppercase tracking-normal">Stores</span>
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[9px] font-mono font-bold border border-emerald-500/25">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Live Network
+                </span>
               </div>
-            ))}
+              <div className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-1.5">
+                Live Retail Deployment
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {["CRM", "POS", "Inventory", "Accounts", "HR"].map((m) => (
+                  <span key={m} className="px-1.5 py-0.5 rounded bg-white/5 text-[9px] font-mono text-slate-300 border border-white/5">
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. UAT Quality Gate Card */}
+            <div className="editorial-card p-3.5 sm:p-4 rounded-xl text-left border-l-2 border-l-red-500 hover:border-l-red-400 transition-all group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors leading-none">
+                  100% <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-normal">Sign-Off</span>
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 font-bold">
+                  Zero Blockers
+                </span>
+              </div>
+              <div className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-1.5">
+                Quality &amp; UAT Governance
+              </div>
+              {/* Progress bar */}
+              <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden mb-1">
+                <div className="h-full bg-gradient-to-r from-red-600 via-rose-500 to-emerald-400 w-full rounded-full"></div>
+              </div>
+              <div className="text-[10px] text-slate-400 font-mono">
+                Structured Test Cases • Defect Triage
+              </div>
+            </div>
+
+            {/* 3. SOP Governance Card */}
+            <div className="editorial-card p-3.5 sm:p-4 rounded-xl text-left border-l-2 border-l-red-500 hover:border-l-red-400 transition-all group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors leading-none">
+                  18+ <span className="text-xs font-mono text-red-400 font-bold uppercase tracking-normal">Manuals</span>
+                </span>
+                <span className="text-[9px] font-mono text-red-300 font-bold px-1.5 py-0.5 rounded bg-red-950/40 border border-red-500/25">
+                  Standardized
+                </span>
+              </div>
+              <div className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-1">
+                SOP Library &amp; Approval Matrices
+              </div>
+              <div className="text-[10px] text-slate-400 leading-snug">
+                Purchase • Sales • HR • Bank Recon • Old Gold / Job Work
+              </div>
+            </div>
+
+            {/* 4. Full SDLC Delivery Card */}
+            <div className="editorial-card p-3.5 sm:p-4 rounded-xl text-left border-l-2 border-l-red-500 hover:border-l-red-400 transition-all group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors leading-none">
+                  SDLC <span className="text-xs font-mono text-red-400 font-bold uppercase tracking-normal">Lifecycle</span>
+                </span>
+                <span className="text-[9px] font-mono text-slate-400 font-bold">
+                  SLA Governed
+                </span>
+              </div>
+              <div className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-1.5">
+                Functional Delivery Bridge
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {["Odoo", "ERPNext", "Jira", "MS Excel"].map((tool) => (
+                  <span key={tool} className="px-1.5 py-0.5 rounded bg-white/5 text-[9px] font-mono text-slate-300 border border-white/5">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
 
         </div>
