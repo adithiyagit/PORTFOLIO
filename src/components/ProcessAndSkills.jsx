@@ -1,8 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GraduationCap, Wrench, CheckCircle2, ArrowRight, Quote, Globe, GitBranch } from 'lucide-react';
 
 export default function ProcessAndSkills({ education, skillsList, workProcess, profile }) {
   const [activeTab, setActiveTab] = useState('process'); // 'process' | 'skills' | 'education'
+
+  // Listen for hash navigation or navbar tab switches (e.g. clicking "Education")
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#education') {
+        setActiveTab('education');
+      } else if (hash === '#process') {
+        setActiveTab('process');
+      } else if (hash === '#skills') {
+        setActiveTab('skills');
+      }
+    };
+
+    const handleTabSwitch = (e) => {
+      if (e.detail) {
+        setActiveTab(e.detail);
+      }
+    };
+
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    window.addEventListener('switch-tab', handleTabSwitch);
+
+    return () => {
+      window.removeEventListener('hashchange', checkHash);
+      window.removeEventListener('switch-tab', handleTabSwitch);
+    };
+  }, []);
 
   const skillGroups = [
     {
@@ -25,6 +54,10 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
 
   return (
     <section id="process" className="py-20 relative bg-[#090407] border-t border-white/5">
+      {/* Anchor targets for direct navigation */}
+      <div id="education" className="absolute -top-24 pointer-events-none"></div>
+      <div id="skills" className="absolute -top-24 pointer-events-none"></div>
+
       <div className="container">
         
         {/* Section Header with Minimalist Tab Filter Buttons */}

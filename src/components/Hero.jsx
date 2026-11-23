@@ -81,6 +81,8 @@ export default function Hero({ profile, deliveryHighlights = [] }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Anchor for About navigation */}
+      <div id="about" className="absolute -top-24 pointer-events-none"></div>
       
       {/* =====================================================================
           GIANT "PORTFOLIO" CONDENSED HEADLINE (Behind Center Cutout)
@@ -141,8 +143,21 @@ export default function Hero({ profile, deliveryHighlights = [] }) {
             <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono text-slate-400">
               <span className="text-red-500 font-bold">NAVIGATE:</span>
               <a href="#projects" className="hover:text-white hover:underline transition-colors">[ Projects ]</a>
-              <a href="#process" className="hover:text-white hover:underline transition-colors">[ Process ]</a>
+              <a 
+                href="#process" 
+                onClick={() => window.dispatchEvent(new CustomEvent('switch-tab', { detail: 'process' }))} 
+                className="hover:text-white hover:underline transition-colors"
+              >
+                [ Process ]
+              </a>
               <a href="#experience" className="hover:text-white hover:underline transition-colors">[ Experience ]</a>
+              <a 
+                href="#education" 
+                onClick={() => window.dispatchEvent(new CustomEvent('switch-tab', { detail: 'education' }))} 
+                className="hover:text-white hover:underline transition-colors"
+              >
+                [ Education ]
+              </a>
               <a href="#contact" className="hover:text-white hover:underline transition-colors">[ Contact ]</a>
             </div>
           </div>

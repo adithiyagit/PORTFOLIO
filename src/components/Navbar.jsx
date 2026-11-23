@@ -39,6 +39,15 @@ export default function Navbar({ resumeUrl }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href) => {
+    setMobileMenuOpen(false);
+    if (href === '#education') {
+      window.dispatchEvent(new CustomEvent('switch-tab', { detail: 'education' }));
+    } else if (href === '#process') {
+      window.dispatchEvent(new CustomEvent('switch-tab', { detail: 'process' }));
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 transition-all duration-300 bg-[#090407]/90 backdrop-blur-xl border-b border-white/5">
       <div className="container flex items-center justify-between py-4">
@@ -61,6 +70,7 @@ export default function Navbar({ resumeUrl }) {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className={`text-xs font-semibold uppercase tracking-widest transition-colors text-decoration-none ${
                   isActive ? 'text-red-500 font-bold' : 'text-slate-400 hover:text-white'
                 }`}
@@ -84,7 +94,7 @@ export default function Navbar({ resumeUrl }) {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-slate-300 hover:text-white p-1"
+            className="md:hidden text-slate-300 hover:text-white p-1 cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -100,7 +110,7 @@ export default function Navbar({ resumeUrl }) {
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => handleNavClick(link.href)}
               className="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-red-500 py-1 transition-colors"
             >
               {link.name}
