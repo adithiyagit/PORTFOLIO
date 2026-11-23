@@ -64,11 +64,11 @@ export default function Hero({ profile, stats }) {
             </div>
 
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
-              ERP Functional Consultant with hands-on experience across the full implementation lifecycle — functional testing, UAT, BRD/FRD documentation, and change control on a live 9-store Odoo rollout. Skilled at bridging business users, developers, and vendors.
+              ERP Functional Consultant bridging business operations and technical execution. Specialized in multi-module Odoo implementations, UAT governance, and 9-store retail rollouts.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
               <a
                 href="#projects"
                 className="btn-crimson-solid"
@@ -85,6 +85,15 @@ export default function Hero({ profile, stats }) {
                 <FileText size={14} className="text-red-400" />
                 <span>Download Resume</span>
               </a>
+            </div>
+
+            {/* Quick Internal Jump Links */}
+            <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono text-slate-400">
+              <span className="text-red-500 font-bold">NAVIGATE:</span>
+              <a href="#projects" className="hover:text-white hover:underline transition-colors">[ Projects ]</a>
+              <a href="#process" className="hover:text-white hover:underline transition-colors">[ Process ]</a>
+              <a href="#experience" className="hover:text-white hover:underline transition-colors">[ Experience ]</a>
+              <a href="#contact" className="hover:text-white hover:underline transition-colors">[ Contact ]</a>
             </div>
           </div>
 

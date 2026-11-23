@@ -1,122 +1,218 @@
-import React from 'react';
-import { GraduationCap, Wrench, CheckCircle2, ArrowRight, Quote } from 'lucide-react';
+import React, { useState } from 'react';
+import { GraduationCap, Wrench, CheckCircle2, ArrowRight, Quote, Globe, GitBranch } from 'lucide-react';
 
 export default function ProcessAndSkills({ education, skillsList, workProcess, profile }) {
+  const [activeTab, setActiveTab] = useState('process'); // 'process' | 'skills' | 'education'
+
+  const skillGroups = [
+    {
+      title: "ERP & Platforms",
+      skills: ["Odoo ERP (v16/v17/v18)", "ERPNext", "Frappe Framework"]
+    },
+    {
+      title: "Business Analysis",
+      skills: ["BRD & FRD Authoring", "Gap Analysis", "Process Mapping (BPMN)"]
+    },
+    {
+      title: "QA & Testing",
+      skills: ["UAT Coordination & Sign-off", "Structured Test Case Design", "Defect Triage"]
+    },
+    {
+      title: "Delivery & Documentation",
+      skills: ["SOP Manuals (18+ authored)", "Jira & Trello Change Control", "MS Excel Reconciliation"]
+    }
+  ];
+
   return (
     <section id="process" className="py-20 relative bg-[#090407] border-t border-white/5">
       <div className="container">
         
-        {/* Section Main Grid: Education & Skills (4 cols) | Work Process (5 cols) | Crimson Quote (3 cols) */}
+        {/* Section Header with Minimalist Tab Filter Buttons */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-4 border-b border-white/10">
+          <div>
+            <div className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">
+              METHODOLOGY &amp; QUALIFICATIONS
+            </div>
+            <h2 className="font-bebas text-4xl sm:text-5xl text-white tracking-wide">
+              PROCESS &amp; CAPABILITIES
+            </h2>
+          </div>
+
+          {/* Interactive Navigation Filter Buttons */}
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setActiveTab('process')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wider transition-all cursor-pointer ${
+                activeTab === 'process'
+                  ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                  : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              01 // WORK PROCESS
+            </button>
+
+            <button
+              onClick={() => setActiveTab('skills')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wider transition-all cursor-pointer ${
+                activeTab === 'skills'
+                  ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                  : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              02 // CORE SKILLS
+            </button>
+
+            <button
+              onClick={() => setActiveTab('education')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wider transition-all cursor-pointer ${
+                activeTab === 'education'
+                  ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                  : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              03 // EDUCATION &amp; SPECS
+            </button>
+          </div>
+        </div>
+
+        {/* 2-Column Responsive Layout: Active Tab Content (8 cols) | Crimson Quote Card (4 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* ===================================================================
-              COLUMN 1: EDUCATION & SKILLS (4 Cols)
-              =================================================================== */}
-          <div className="lg:col-span-4 space-y-8">
+          {/* Main Interactive Tab Stage (8 cols) */}
+          <div className="lg:col-span-8">
             
-            {/* Education Block */}
-            <div id="education" className="editorial-card p-6 rounded-2xl">
-              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/10">
-                <GraduationCap size={18} className="text-red-500" />
-                <h3 className="font-bebas text-2xl text-white tracking-wide">
-                  EDUCATION
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                {education.map((edu) => (
-                  <div key={edu.degree} className="pl-3 border-l-2 border-red-500/60">
-                    <div className="text-sm font-bold text-white mb-0.5">{edu.degree}</div>
-                    <div className="text-xs text-slate-400 mb-1">{edu.institution}</div>
-                    <div className="text-[11px] font-bold text-red-400">{edu.period}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Core Skills Block */}
-            <div className="editorial-card p-6 rounded-2xl">
-              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/10">
-                <Wrench size={18} className="text-red-500" />
-                <h3 className="font-bebas text-2xl text-white tracking-wide">
-                  CORE SKILLS
-                </h3>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {skillsList.map((skill) => (
-                  <span
-                    key={skill.name}
-                    className="px-2.5 py-1 rounded bg-white/5 text-xs font-medium text-slate-300 border border-white/10 hover:border-red-500/40 hover:text-white transition-colors"
-                  >
-                    {skill.name}
+            {/* TAB 1: WORK PROCESS PIPELINE */}
+            {activeTab === 'process' && (
+              <div className="editorial-card p-6 sm:p-8 rounded-2xl animate-in fade-in duration-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-bebas text-2xl sm:text-3xl text-white tracking-wide leading-none">
+                    5-STAGE SDLC IMPLEMENTATION LIFECYCLE
+                  </h3>
+                  <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
+                    Governance
                   </span>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          {/* ===================================================================
-              COLUMN 2: WORK PROCESS PIPELINE (5 Cols)
-              =================================================================== */}
-          <div className="lg:col-span-5 editorial-card p-6 sm:p-8 rounded-2xl">
-            {/* Heading Container with Safe Spacing */}
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-bebas text-3xl text-white tracking-wide leading-none">
-                WORK PROCESS
-              </h3>
-              <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
-                Full SDLC Delivery
-              </span>
-            </div>
-            <div className="w-full h-px bg-white/10 mb-6"></div>
-
-            {/* Step-by-Step Pipeline with Isolated Columns so Line Never Crosses Text */}
-            <div className="space-y-4">
-              {workProcess.map((item, index) => (
-                <div key={item.step} className="flex items-start gap-3.5 group">
-                  
-                  {/* Left Column: Number Badge + Connecting Line */}
-                  <div className="flex flex-col items-center shrink-0 w-8">
-                    <div className="w-8 h-8 rounded-full bg-[#12080e] border-2 border-red-500 flex items-center justify-center font-bebas text-sm text-white group-hover:bg-red-600 transition-colors shadow-md shadow-red-600/30">
-                      {item.step}
-                    </div>
-                    {/* Connecting line to next step */}
-                    {index < workProcess.length - 1 && (
-                      <div className="w-0.5 h-12 bg-gradient-to-b from-red-500 via-rose-600 to-red-950 my-1"></div>
-                    )}
-                  </div>
-
-                  {/* Right Column: Title, Tag & Description (Completely Isolated from Line) */}
-                  <div className="flex-1 pt-0.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                      <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-red-400 transition-colors">
-                        {item.title}
-                      </h4>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-950/40 border border-red-500/30 text-red-300">
-                        {item.tag}
-                      </span>
-                    </div>
-
-                    <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                      {item.desc}
-                    </p>
-                  </div>
-
                 </div>
-              ))}
-            </div>
+                <div className="w-full h-px bg-white/10 mb-6"></div>
+
+                <div className="space-y-4">
+                  {workProcess.map((item, index) => (
+                    <div key={item.step} className="flex items-start gap-4 group">
+                      
+                      {/* Step Badge & Connector Line */}
+                      <div className="flex flex-col items-center shrink-0 w-8">
+                        <div className="w-8 h-8 rounded-full bg-[#12080e] border-2 border-red-500 flex items-center justify-center font-bebas text-sm text-white group-hover:bg-red-600 transition-colors shadow-md shadow-red-600/30">
+                          {item.step}
+                        </div>
+                        {index < workProcess.length - 1 && (
+                          <div className="w-0.5 h-10 bg-gradient-to-b from-red-500 via-rose-600 to-red-950 my-1"></div>
+                        )}
+                      </div>
+
+                      {/* Content: Title & Deliverables */}
+                      <div className="flex-1 pt-0.5">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                          <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-red-400 transition-colors">
+                            {item.title}
+                          </h4>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-950/40 border border-red-500/30 text-red-300">
+                            {item.tag}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: CORE SKILLS MATRIX */}
+            {activeTab === 'skills' && (
+              <div className="editorial-card p-6 sm:p-8 rounded-2xl animate-in fade-in duration-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-bebas text-2xl sm:text-3xl text-white tracking-wide leading-none">
+                    FUNCTIONAL COMPETENCIES &amp; TOOLS
+                  </h3>
+                  <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
+                    Verified Capabilities
+                  </span>
+                </div>
+                <div className="w-full h-px bg-white/10 mb-6"></div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {skillGroups.map((grp) => (
+                    <div key={grp.title} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                      <div className="text-xs font-bold text-red-400 uppercase tracking-wider mb-3 font-mono">
+                        {grp.title}
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {grp.skills.map((s) => (
+                          <span
+                            key={s}
+                            className="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-200 border border-white/10 font-medium"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+                  <span>Tools: Odoo, ERPNext, Jira, Trello, MS Excel</span>
+                  <a href="#contact" className="text-red-400 hover:text-white font-bold flex items-center gap-1">
+                    Request Skills Matrix →
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 3: EDUCATION & CREDENTIALS */}
+            {activeTab === 'education' && (
+              <div className="editorial-card p-6 sm:p-8 rounded-2xl animate-in fade-in duration-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-bebas text-2xl sm:text-3xl text-white tracking-wide leading-none">
+                    ACADEMIC DEGREES &amp; QUALIFICATIONS
+                  </h3>
+                  <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
+                    Verified
+                  </span>
+                </div>
+                <div className="w-full h-px bg-white/10 mb-6"></div>
+
+                <div className="space-y-5 mb-6">
+                  {education.map((edu) => (
+                    <div key={edu.degree} className="pl-4 border-l-2 border-red-500">
+                      <div className="text-base font-bold text-white mb-0.5">{edu.degree}</div>
+                      <div className="text-xs text-slate-300 mb-1">{edu.institution}</div>
+                      <div className="text-[11px] font-mono font-bold text-red-400">[ {edu.period} ]</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+                  <div>
+                    Languages: <span className="text-white font-semibold">English (Prof.), Malayalam (Native), Tamil, Hindi</span>
+                  </div>
+                  <div>
+                    Citizenship: <span className="text-white font-semibold">{profile.nationality}</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
           </div>
 
-          {/* ===================================================================
-              COLUMN 3: CRIMSON QUOTE & PERSONAL SPECS (3 Cols)
-              =================================================================== */}
-          <div className="lg:col-span-3 space-y-6">
+          {/* Crimson Quote Card & Quick Specs (4 cols) */}
+          <div className="lg:col-span-4 space-y-6">
             
-            {/* The Signature Red Quote Card (Pinterest Reference) */}
+            {/* Signature Red Quote Card */}
             <div className="bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white p-6 sm:p-7 rounded-2xl shadow-xl shadow-red-900/30 relative overflow-visible group">
-              <Quote size={32} className="text-white/25 mb-3" />
+              <Quote size={28} className="text-white/25 mb-3" />
               
               <p className="font-serif italic text-sm sm:text-base leading-relaxed text-white/95 mb-6">
                 "{profile.quote}"
@@ -140,36 +236,24 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
               </div>
             </div>
 
-            {/* Mobility & Flight Specs Card */}
-            <div className="editorial-card p-5 rounded-2xl space-y-3">
-              <div className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">
-                MOBILITY &amp; RELOCATION
-              </div>
-
-              <div className="text-xs text-slate-300 flex justify-between py-1 border-b border-white/5">
-                <span className="text-slate-400">Availability:</span>
-                <span className="font-bold text-emerald-400">Immediate</span>
-              </div>
-
-              <div className="text-xs text-slate-300 flex justify-between py-1 border-b border-white/5">
-                <span className="text-slate-400">Target Markets:</span>
-                <span className="font-semibold text-white">India &amp; UAE / GCC</span>
-              </div>
-
-              <div className="text-xs text-slate-300 flex justify-between py-1 border-b border-white/5">
-                <span className="text-slate-400">Citizenship:</span>
-                <span className="font-semibold text-white">{profile.nationality}</span>
-              </div>
-
-              <div className="pt-2">
-                <span className="text-[11px] text-slate-400 block mb-1">Languages:</span>
-                <div className="flex flex-wrap gap-1">
-                  <span className="px-2 py-0.5 rounded bg-white/5 text-[10px] text-slate-300">English (Prof.)</span>
-                  <span className="px-2 py-0.5 rounded bg-white/5 text-[10px] text-slate-300">Malayalam (Native)</span>
-                  <span className="px-2 py-0.5 rounded bg-white/5 text-[10px] text-slate-300">Tamil</span>
-                  <span className="px-2 py-0.5 rounded bg-white/5 text-[10px] text-slate-300">Hindi</span>
+            {/* Quick Action Pill Card */}
+            <div className="editorial-card p-5 rounded-2xl flex items-center justify-between gap-3">
+              <div>
+                <div className="text-xs font-bold text-white mb-0.5">
+                  Need Full Technical Specs?
+                </div>
+                <div className="text-[11px] text-slate-400">
+                  Download complete verified resume PDF
                 </div>
               </div>
+
+              <a
+                href={profile.resumePdf}
+                download
+                className="btn-crimson-solid text-[10px] py-2 px-3 shrink-0"
+              >
+                Get PDF
+              </a>
             </div>
 
           </div>
