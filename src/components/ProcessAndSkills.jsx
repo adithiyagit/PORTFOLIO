@@ -142,29 +142,34 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
                 </div>
                 <div className="w-full h-px bg-white/10 mb-6"></div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {skillGroups.map((grp) => (
-                    <div key={grp.title} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                      <div className="text-xs font-bold text-red-400 uppercase tracking-wider mb-3 font-mono">
-                        {grp.title}
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {grp.skills.map((s) => (
-                          <span
-                            key={s}
-                            className="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-200 border border-white/10 font-medium"
-                          >
-                            {s}
-                          </span>
-                        ))}
+                    <div 
+                      key={grp.title} 
+                      className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-red-500/30 transition-all flex flex-col justify-between h-full min-h-[145px]"
+                    >
+                      <div>
+                        <div className="text-xs font-bold text-red-400 uppercase tracking-wider mb-3 font-mono">
+                          {grp.title}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {grp.skills.map((s) => (
+                            <span
+                              key={s}
+                              className="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-200 border border-white/10 font-medium"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                  <span>Tools: Odoo, ERPNext, Jira, Trello, MS Excel</span>
-                  <a href="#contact" className="text-red-400 hover:text-white font-bold flex items-center gap-1">
+                <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+                  <span>Standard Suite: Odoo, ERPNext, Jira, Trello, MS Excel</span>
+                  <a href="#contact" className="text-red-400 hover:text-white font-bold flex items-center gap-1 transition-colors">
                     Request Skills Matrix →
                   </a>
                 </div>
@@ -179,17 +184,22 @@ export default function ProcessAndSkills({ education, skillsList, workProcess, p
                     ACADEMIC DEGREES &amp; QUALIFICATIONS
                   </h3>
                   <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">
-                    Verified
+                    Verified Credentials
                   </span>
                 </div>
                 <div className="w-full h-px bg-white/10 mb-6"></div>
 
-                <div className="space-y-5 mb-6">
+                <div className="space-y-4 mb-6">
                   {education.map((edu) => (
-                    <div key={edu.degree} className="pl-4 border-l-2 border-red-500">
-                      <div className="text-base font-bold text-white mb-0.5">{edu.degree}</div>
-                      <div className="text-xs text-slate-300 mb-1">{edu.institution}</div>
-                      <div className="text-[11px] font-mono font-bold text-red-400">[ {edu.period} ]</div>
+                    <div 
+                      key={edu.degree} 
+                      className="p-4 rounded-xl bg-white/[0.02] border border-white/5 border-l-2 border-l-red-500 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-l-red-400 transition-colors"
+                    >
+                      <div>
+                        <div className="text-base font-bold text-white mb-0.5">{edu.degree}</div>
+                        <div className="text-xs text-slate-300">{edu.institution}</div>
+                      </div>
+                      <div className="text-xs font-mono font-bold text-red-400 shrink-0">[ {edu.period} ]</div>
                     </div>
                   ))}
                 </div>

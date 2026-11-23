@@ -24,17 +24,17 @@ export default function Projects({ projects }) {
           </div>
         </div>
 
-        {/* 3 Minimalist Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 3 Minimalist Project Cards with Synchronized Grid Baseline */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((proj) => (
             <div
               key={proj.id}
-              className="editorial-card p-6 sm:p-7 rounded-2xl flex flex-col justify-between group relative overflow-hidden"
+              className="editorial-card h-full p-6 sm:p-7 rounded-2xl flex flex-col justify-between group relative overflow-hidden transition-all duration-300"
             >
               {/* Top Accent Red Line on Hover */}
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div>
+              <div className="flex flex-col flex-1">
                 {/* Index & Platform Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="font-bebas text-2xl text-red-500 font-normal">
@@ -45,18 +45,22 @@ export default function Projects({ projects }) {
                   </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
-                  {proj.title}
-                </h3>
+                {/* Fixed-Height Title for Perfect Row Alignment */}
+                <div className="min-h-[56px] flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-white group-hover:text-red-400 transition-colors leading-snug">
+                    {proj.title}
+                  </h3>
+                </div>
                 
-                {/* One-line Scope / Impact */}
-                <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
-                  {proj.scope}
-                </p>
+                {/* Standardized Scope / Impact Container */}
+                <div className="min-h-[42px] mb-5">
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans line-clamp-2">
+                    {proj.scope}
+                  </p>
+                </div>
 
-                {/* Top 2 Key Highlights Pills */}
-                <div className="space-y-2 mb-6">
+                {/* Standardized Highlights Container */}
+                <div className="min-h-[58px] flex flex-col justify-center space-y-2 mb-6">
                   {proj.highlights.slice(0, 2).map((h, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs text-slate-300 font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
@@ -66,8 +70,8 @@ export default function Projects({ projects }) {
                 </div>
               </div>
 
-              {/* Bottom Action Button */}
-              <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+              {/* Bottom Action Button Locked to Base */}
+              <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[11px] font-mono text-slate-500 font-semibold">
                   {proj.year}
                 </span>

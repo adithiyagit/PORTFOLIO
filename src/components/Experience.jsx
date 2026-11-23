@@ -56,7 +56,7 @@ export default function Experience({ experience }) {
                       </h3>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300 font-semibold mt-1.5 pl-4.5">
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300 font-semibold mt-1.5 pl-4">
                       <span className="text-red-400 font-bold">{exp.company}</span>
                       <span>•</span>
                       <span className="text-slate-400 flex items-center gap-1">
